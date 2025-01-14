@@ -5,6 +5,17 @@
 #include <locale.h>
 #include <windows.h>
 
+// Добавить проверки логина и пароля при регистрации
+// логин от 3 до 20 символов латиницы и цифр
+// пароль от 6 до 20 символов литиница, минимум одна цифра, верхний и нижний регистр
+// название фильма от 1 до 40 символов
+// страна от 1 до 20 символов и с большой буквы
+
+// добавить личный кабинет, где можно будет изменить свои данные 
+
+// удаление фильма с админки должно удалять этот фильм у всех из списка избранного 
+
+
 typedef struct Movie {
     char title[100];
     int year;
@@ -85,7 +96,7 @@ void saveMoviesToFile(Movie* head) {
 }
 
 char* stringCreator(const char* string, int size) {
-    char* result = (char*)malloc((size + 1) * sizeof(char));
+    char* result = (char*)malloc((size*2 + 1) * sizeof(char));
     int byteIndex = 0;
     int charCount = 0;
     int resultIndex = 0;
